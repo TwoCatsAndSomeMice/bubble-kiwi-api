@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 
 from flask import Flask, request, render_template, redirect, url_for
-app = Flask("Bubble Kiwi")
+app = Flask("KiwiBubble")
 
 @app.errorhandler(404)
 def not_found(error):
@@ -10,8 +10,8 @@ def not_found(error):
 @app.route("/")
 @app.route("/<refer>")
 def referal(refer=None):
-    title = request.args.get("t", "Bubble")
-    image_url = request.args.get("i", "Bursting the Bubble")
+    title = request.args.get("t", "KiwiBubble")
+    image_url = request.args.get("i", "Bursting your Bubble")
     description = request.args.get("d", "")
 
     return render_template("redirect.html", title=title, image=image_url, description=description)
